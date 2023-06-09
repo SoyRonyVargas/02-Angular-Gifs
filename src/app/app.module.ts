@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GifsModule } from './gifs/gifs.module';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    GifsModule
+    GifsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

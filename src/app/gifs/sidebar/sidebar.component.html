@@ -1,6 +1,24 @@
-<ng-container>
-    <section class="column is-3 has-background-dark">
-        1
-    </section>
-</ng-container>
-    
+    <div class="container__left-side">
+        <h2 class="title is-h2 has-text-white">GifsApp</h2>
+        <hr>
+        <p class="has-text-white is-size-4 mb-3 has-text-weight-bold is-bold">
+            Busquedas recientes
+        </p>
+        <section class="container__tags">
+            <div class="box" *ngFor="let tag of tags">
+                {{ tag | titlecase }}
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .container__tags
+        {
+            overflow-y: scroll;
+            max-height: 80vh;
+        }
+        .container__tags::-webkit-scrollbar-thumb
+        {
+            background-color: #fff;;
+        }
+    </style>
