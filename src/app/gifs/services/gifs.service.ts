@@ -18,7 +18,36 @@ export class GifsService {
 
   constructor(
     private httpClient: HttpClient
-  ) { }
+  ) { 
+
+    this.loadLocalStorage()
+
+  }
+
+  private loadLocalStorage() : void{
+
+    try
+    {
+      
+      let tags = window.localStorage.getItem("tags")
+
+      if( !tags ) return;
+
+      this._tagsHistory = JSON.parse(tags)
+      
+      if(this.tagsHistory.length > 0)
+      {
+        const tag = this.tagsHistory[0]
+        this.searchTag(tag)
+      }
+
+    }
+    catch
+    {
+
+    }
+
+  }
 
   private organizeHistory( tag: string ){
 
@@ -33,6 +62,8 @@ export class GifsService {
 
     this._tagsHistory = this._tagsHistory.splice( 0 , 10 )
 
+    this.saveLocalStorage()
+
   }
 
   get tagsHistory()
@@ -41,7 +72,20 @@ export class GifsService {
     return  history;
   }
 
-   searchTag( tag: string ): void {
+  private saveLocalStorage(): void {
+
+    try
+    {
+      window.localStorage.setItem('tags' , JSON.stringify(this.tagsHistory))
+    }
+    catch
+    {
+      alert("Error de busqueda")
+    }
+
+  }
+
+  public searchTag( tag: string ): void {
     
     if( tag.trim().length === 0 ) return;
 

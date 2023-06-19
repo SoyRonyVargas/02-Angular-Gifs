@@ -5,7 +5,11 @@
             Busquedas recientes
         </p>
         <section class="container__tags">
-            <div class="box" *ngFor="let tag of tags">
+            <div 
+                *ngFor="let tag of tags"
+                (click)="selectTag(tag)" 
+                class="box w-100 w-full" 
+            >
                 {{ tag | titlecase }}
             </div>
         </section>
