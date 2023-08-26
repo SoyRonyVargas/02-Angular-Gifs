@@ -5,6 +5,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CardComponent } from './card/card.component';
 import { GifsService } from './services/gifs.service';
 import { ListComponent } from './list/list.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ListComponent } from './list/list.component';
   ],
   imports: [
     CommonModule,
+    SharedModule
   ],
   providers: [
     GifsService

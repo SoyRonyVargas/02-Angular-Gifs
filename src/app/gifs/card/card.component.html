@@ -1,9 +1,8 @@
-<div class="box">
-    <article class="">
-      <div class="image is-full-width">
-        <figure class="image is-full-width">
-          <img [src]="gif?.images?.downsized?.url" alt="Image">
-        </figure>
-      </div>
-    </article>
-  </div>
+<div class="box card-box">
+  <article>
+    <div class="image is-full-width">
+      <!-- <img class="image is-full-width" [src]="gif?.images?.downsized?.url" alt="Image"> -->
+      <lazy-image [url]="gif?.images?.downsized?.url!"></lazy-image>
+    </div>
+  </article>
+</div>

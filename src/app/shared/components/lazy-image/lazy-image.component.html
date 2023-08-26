@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center ">
+   
+    <img 
+        [src]="url" 
+        [alt]="alt"
+        (load)="onLoad()"
+    />
+    <img 
+        *ngIf="!hasLoaded"
+        class="loader"
+        src="assets/oval.svg" 
+    />
+</div>

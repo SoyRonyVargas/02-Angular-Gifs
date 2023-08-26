@@ -20,7 +20,7 @@
         </div>
       </div>
       
-      <app-list [gifs]="gifs" class="columns is-mobile is-multiline"></app-list>
+      <app-list [gifs]="gifs" class="custom-container columns is-mobile is-multiline"></app-list>
 
     </section>
       
@@ -32,5 +32,10 @@
     .container__left-side
     {
         padding: 10px;
+    }
+    .custom-container 
+    {
+      max-height: 80vh;
+      overflow-y: scroll;
     }
 </style>
